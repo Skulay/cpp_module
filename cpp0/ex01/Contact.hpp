@@ -28,7 +28,7 @@ class Contact
             std::cout << "Type your first name:\n> ";
             if (!std::getline(std::cin, first_name))
             {
-                std::cout << "\nEOF detected. Exiting.\n";
+                std::cout << "\nCTRL+D detected. Exit.\n";
                 return;
             }
             if (first_name.length() == 0)
@@ -44,7 +44,7 @@ class Contact
             std::cout << "Type your last name:\n> ";
             if (!std::getline(std::cin, last_name))
             {
-                std::cout << "\nEOF detected. Exiting.\n";
+                std::cout << "\nCTRL+D detected. Exit.\n";
                 return;
             }
             if (last_name.length() == 0)
@@ -60,7 +60,7 @@ class Contact
             std::cout << "Type your nickname:\n> ";
             if (!std::getline(std::cin, nickname))
             {
-                std::cout << "\nEOF detected. Exiting.\n";
+                std::cout << "\nCTRL+D detected. Exit.\n";
                 return;
             }
             if (nickname.length() == 0)
@@ -76,7 +76,7 @@ class Contact
             std::cout << "Type your phone number:\n> ";
             if (!std::getline(std::cin, phone_number))
             {
-                std::cout << "\nEOF detected. Exiting.\n";
+                std::cout << "\nCTRL+D detected. Exit.\n";
                 return;
             }
             if (phone_number.length() == 0)
@@ -92,7 +92,7 @@ class Contact
             std::cout << "Type your Darkest secret:\n> ";
             if (!std::getline(std::cin, darkest_secret))
             {
-                std::cout << "\nEOF detected. Exiting.\n";
+                std::cout << "\nCTRL+D detected. Exit.\n";
                 return;
             }
             if (darkest_secret.length() == 0)
