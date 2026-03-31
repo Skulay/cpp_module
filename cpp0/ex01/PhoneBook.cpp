@@ -14,27 +14,58 @@
 #include <string>
 #include "PhoneBook.hpp"
 
-int main()
+std::string PhoneBook::formatString(const std::string &str) const
 {
-    PhoneBook phonebook;
-    std::string command;
-
-    while (1)
-    {
-        std::cout << "Enter command (ADD, SEARCH, EXIT):\n> ";
-        if (!std::getline(std::cin, command))
-        {
-            std::cout << "\nCTRL+D detected. Exit." << std::endl;
-            break;
-        }
-        if (command == "ADD")
-            phonebook.ADD();
-        else if (command == "SEARCH")
-            phonebook.SEARCH();
-        else if (command == "EXIT")
-            break;
-        else
-            std::cout << "Invalid command" << std::endl;
-    }
-    return (0);
+	if (str.length() > 10)
+		return str.substr(0, 9) + ".";
+	return str;
 }
+
+void PhoneBook::ADD()
+{
+	Contacts[i].add_contact();
+	i++;
+	if (i == 8)
+		i = 0;
+	if (count < 8)
+		count++;
+}
+
+void PhoneBook::SEARCH() const
+{
+	if (count == 0)
+	{
+		std::cout << "PhoneBook is empty" << std::endl;
+		return;
+	}
+	std::cout << std::right;
+	std::cout << std::setw(10) << "Index" << "|"
+				<< std::setw(10) << "First Name" << "|"
+				<< std::setw(10) << "Last Name" << "|"
+				<< std::setw(10) << "Nickname" << std::endl;
+	int index = 0;
+	while (index < count)
+	{
+		std::cout << std::setw(10) << index << "|"
+				<< std::setw(10) << formatString(Contacts[index].get_firstname()) << "|"
+				<< std::setw(10) << formatString(Contacts[index].get_lastname()) << "|"
+				<< std::setw(10) << formatString(Contacts[index].get_nickname()) << std::endl;
+		index++;
+	}
+	std::string input;
+	std::cout << "Enter index:\n> ";
+	std::getline(std::cin, input);
+	if (input.length() != 1 || !isdigit(input[0]))
+	{
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
+	index = input[0] - '0';
+	if (index < 0 || index >= count)
+	{
+		std::cout << "Invalid index" << std::endl;
+		return;
+	}
+	Contacts[index].print_contact();
+}
+

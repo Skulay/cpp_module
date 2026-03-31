@@ -16,79 +16,23 @@
 #include "Contact.hpp"
 #include <iomanip>
 
-class PhoneBook 
+
+class PhoneBook
 {
-    public:
+	public:
 
-    PhoneBook() : i(0), count(0) {}
+		PhoneBook() : i(0), count(0) {};
 
-    void ADD()
-    {
-        Contacts[i].add_contact();
-        i++;
-        if (i == 8)
-            i = 0;
-        if (count < 8)
-            count++;
-    }
+		void ADD();
+		void SEARCH() const;
 
-    void SEARCH() const
-    {
-        if (count == 0)
-        {
-            std::cout << "PhoneBook is empty" << std::endl;
-            return;
-        }
-        std::cout << std::right;
-        std::cout << std::setw(10) << "Index" << "|"
-                  << std::setw(10) << "First Name" << "|"
-                  << std::setw(10) << "Last Name" << "|"
-                  << std::setw(10) << "Nickname" << std::endl;
-        int index = 0;
-        while (index < count)
-        {
-            std::cout << std::setw(10) << index << "|"
-                  << std::setw(10) << formatString(Contacts[index].get_firstname()) << "|"
-                  << std::setw(10) << formatString(Contacts[index].get_lastname()) << "|"
-                  << std::setw(10) << formatString(Contacts[index].get_nickname()) << std::endl;
-            index++;
-        }
-        std::string input;
-        std::cout << "Enter index:\n> ";
-        std::getline(std::cin, input);
+	private:
 
-        if (input.length() != 1 || !isdigit(input[0]))
-        {
-            std::cout << "Invalid index" << std::endl;
-            return;
-        }
-        index = input[0] - '0';
-        if (index < 0 || index >= count)
-        {
-            std::cout << "Invalid index" << std::endl;
-            return;
-        }
-        Contacts[index].print_contact();
-    }
+		std::string formatString(const std::string &str) const;
 
-    private:
-
-    std::string formatString(const std::string &str) const
-    {
-        if (str.length() > 10)
-            return str.substr(0, 9) + ".";
-        return str;
-    }
-
-    Contact Contacts[8];
-    int i;
-    int count;
-
+		Contact Contacts[8];
+		int i;
+		int count;
 };
-
-
-
-
-
 
 #endif
