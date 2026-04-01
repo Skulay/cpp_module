@@ -1,0 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alehamad <alehamad@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/04/01 10:10:18 by alehamad          #+#    #+#             */
+/*   Updated: 2026/04/01 10:10:18 by alehamad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <iostream>
+#include <string>
+#include "Zombie.hpp"
+
+Zombie::Zombie(std::string name)
+{
+    this->name = name;
+}
+
+void Zombie::announce()
+{
+    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
