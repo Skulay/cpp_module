@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alehamad <alehamad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 10:10:20 by alehamad          #+#    #+#             */
-/*   Updated: 2026/04/01 10:10:20 by alehamad         ###   ########.fr       */
+/*   Created: 2026/04/01 10:56:57 by alehamad          #+#    #+#             */
+/*   Updated: 2026/04/01 10:56:57 by alehamad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Zombie.hpp"
+#include <iostream>
 
-#include <string>
-
-class Zombie
+int main()
 {
-	public:
-		Zombie() : name("") {};
-		Zombie(std::string name);
-        void announce();
+    int i;
+    int n;
 
-	private:
+    i = 0;
+    n = 10;
+    Zombie* horde = zombieHorde(n, "sku");
+    while (i < n)
+    {
+        horde[i].announce();
+        i++;
+    }
 
-		std::string name;
-};
-
-	Zombie* newZombie(std::string name);
-	void randomChump(std::string name);
-
-#endif
+    delete[] horde;
+    return (0);
+}
