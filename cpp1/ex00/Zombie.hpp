@@ -23,7 +23,6 @@ class Zombie
         void announce();
 
 	private:
-
 		std::string name;
 };
 
