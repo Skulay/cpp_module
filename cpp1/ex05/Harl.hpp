@@ -21,12 +21,12 @@ class Harl
 {
 	public:
 
-    void react(std::string status)
+    void complain(std::string level);
 
 	private:
 
-	void debug();
-    void infos();
+    void debug();
+    void info();
     void warning();
     void error();
 };
