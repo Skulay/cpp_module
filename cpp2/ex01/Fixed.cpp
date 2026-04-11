@@ -64,7 +64,7 @@ float toFloat(void) const
     return ((float)this->value / (1 << fractionalBits));
 }
 
-int toInt(void) const
+int toInt(void) const 
 {
     return (this->value >> fractionalBits);
 }
