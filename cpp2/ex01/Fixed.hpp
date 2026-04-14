@@ -19,6 +19,7 @@
 class Fixed 
 {
     public:
+        Fixed();
         Fixed(const int value);
         Fixed(const float value);
         Fixed(const Fixed& other);
@@ -29,6 +30,8 @@ class Fixed
         void setRawBits(int const raw);
         float toFloat(void) const;
         int toInt(void) const;
+
+        friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
     private:
         int value;
