@@ -12,6 +12,7 @@
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FlagTrap.hpp"
 
 int main() {
 
@@ -37,6 +38,19 @@ int main() {
     b.takeDamage(20);
     b.beRepaired(15);
     b.guardGate();
+
+    std::cout << std::endl;
+
+    // Flaggy
+    FlagTrap c("Flaggy");
+    std::cout << "FlagTrap Name: " << c.GetName() << std::endl;
+    std::cout << "FlagTrap Hit Points: " << c.GetHit() << std::endl;
+    std::cout << "FlagTrap Energy: " << c.GetEnergy() << std::endl;
+    std::cout << "FlagTrap Attack: " << c.GetAttack() << std::endl;
+    c.attack("Target2");
+    c.takeDamage(20);
+    c.beRepaired(15);
+    c.highFivesGuys();
 
     return (0);
 }
