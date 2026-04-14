@@ -33,6 +33,18 @@ int ClapTrap::GetAttack() const {
     return (Attack);
 }
 
+void ClapTrap::SetHit(unsigned int hit) {
+    Hit = hit;
+}
+
+void ClapTrap::SetEnergy(unsigned int energy) {
+    Energy = energy;
+}
+
+void ClapTrap::SetAttack(unsigned int attack) {
+    Attack = attack;
+}
+
 void ClapTrap::attack(const std::string& target) {
     if (Energy == 0) {
         std::cout << "ClapTrap " << Name << " has no energy to attack!" << std::endl;

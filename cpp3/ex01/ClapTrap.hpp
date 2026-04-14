@@ -27,6 +27,10 @@ class ClapTrap
     int GetEnergy() const;
     int GetAttack() const;
 
+    void SetHit(unsigned int hit);
+    void SetEnergy(unsigned int energy);
+    void SetAttack(unsigned int attack);
+
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
