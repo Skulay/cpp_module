@@ -14,12 +14,21 @@
 #include <string>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
-{
+Zombie::Zombie() {}
+
+Zombie::~Zombie() {
+    std::cout << name << " destroyed" << std::endl;
+}
+
+void Zombie::setName(std::string newName) {
+    this->name = newName;
+}
+
+
+Zombie::Zombie(std::string name) {
     this->name = name;
 }
 
-void Zombie::announce()
-{
+void Zombie::announce() {
     std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

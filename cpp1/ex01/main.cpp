@@ -19,7 +19,7 @@ int main()
     int n;
 
     i = 0;
-    n = 10;
+    n = 2;
     Zombie* horde = zombieHorde(n, "sku");
     while (i < n)
     {

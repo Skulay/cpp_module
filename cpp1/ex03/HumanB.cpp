@@ -14,6 +14,10 @@
 
 HumanB::HumanB(std::string n) : name(n), weapon(NULL) {}
 
+HumanB::~HumanB() {
+    std::cout << name << " destroyed" << std::endl;
+}
+
 void HumanB::setWeapon(Weapon &w)
 {
     weapon = &w;
