@@ -16,6 +16,10 @@
 
 Zombie::Zombie name("") {}
 
+Zombie::~Zombie() {
+    std::cout << name << " destroyed" << std::endl;
+}
+
 Zombie::Zombie(std::string name)
 {
     this->name = name;
