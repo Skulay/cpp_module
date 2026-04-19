@@ -14,7 +14,7 @@
 #include <string>
 #include "Zombie.hpp"
 
-Zombie::Zombie name("") {}
+Zombie::Zombie() : name("") {}
 
 Zombie::~Zombie() {
     std::cout << name << " destroyed" << std::endl;

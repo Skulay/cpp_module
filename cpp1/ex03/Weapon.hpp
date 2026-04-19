@@ -18,12 +18,12 @@
 class Weapon
 {
 	public:
-    Weapon(std::string type);
-    std::string getType();
-    void setType(std::string newType);
+        Weapon(std::string type);
+        std::string getType();
+        void setType(std::string newType);
 
 	private:
-    std::string type;
+        std::string type;
 };
 
 #endif
