@@ -58,11 +58,11 @@ class Fixed
         static Fixed& max(Fixed& a, Fixed& b);
         static const Fixed& max(const Fixed& a, const Fixed& b);
 
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
-
     private:
         int value;
         static const int fractionalBits = 8;
     };
+
+    std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif

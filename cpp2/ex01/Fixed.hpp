@@ -31,11 +31,11 @@ class Fixed
         float toFloat(void) const;
         int toInt(void) const;
 
-        friend std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
-
     private:
         int value;
         static const int fractionalBits = 8;
     };
+    
+    std::ostream& operator<<(std::ostream& os, const Fixed& fixed);
 
 #endif
